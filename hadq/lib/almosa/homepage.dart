@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 50), // Adjust as needed for spacing
+            const SizedBox(width: 50), // Adjust as needed for spacing
           ],
         ),
       ),
