@@ -1,8 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:hadq/almosa/raset_password.dart';
+import 'package:hadq/almosa/login.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({Key? key}) : super(key: key);
+
+  void _showPasswordSentPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Password Reset'),
+          content:
+              const Text('A new password has been sent to your email address.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Login()),
+                );
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +48,7 @@ class Login extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const Text(
-                        'Welcome Back!',
+                        'Reset password',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -37,35 +61,12 @@ class Login extends StatelessWidget {
                           border: OutlineInputBorder(),
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      TextFormField(
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          labelText: 'Password',
-                          border: OutlineInputBorder(),
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      Row(
-                        children: [
-                          const Text("Forget password?"),
-                          TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const ResetPassword()));
-                              },
-                              child: const Text("Reset password"))
-                        ],
-                      ),
                       const SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: () {
-                          // Add your login functionality here
+                          _showPasswordSentPopup(context);
                         },
-                        child: const Text('Login'),
+                        child: const Text('Send Email'),
                       ),
                     ],
                   ),
