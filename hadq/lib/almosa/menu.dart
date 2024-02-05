@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hadq/almosa/wordwander.dart';
 
 class Menus extends StatelessWidget{
   const Menus({super.key});
@@ -32,7 +33,9 @@ class Menus extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: (){},
+            ElevatedButton(onPressed: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => WordWander(),));
+            },
              child:const Text(
               '1' ,
               style: TextStyle(
