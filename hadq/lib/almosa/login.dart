@@ -8,7 +8,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 107, 221, 236),
-      body: Center(
+      body:Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -16,7 +16,17 @@ class Login extends StatelessWidget {
             children: [
               const Image(image: AssetImage('asset/hadq.png')),
               const SizedBox(height: 20),
-              Card(
+              Container(
+                
+                decoration:const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(60)),
+                  boxShadow:[BoxShadow(
+                    color: Color.fromRGBO(225, 95, 27, .3),
+                    blurRadius: 20,
+                    offset: Offset(0, 10)
+                  )] 
+                ),
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
