@@ -49,8 +49,17 @@ class _RegisterState extends State<Register> {
                 const SizedBox(height: 20),
                 const Image(image: AssetImage('asset/hadq.png')),
                 const SizedBox(height: 20),
-                Card(
-                  elevation: 5,
+                Container(
+                  decoration:const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(60)),
+                  boxShadow:[BoxShadow(
+                    color: Color.fromRGBO(36, 36, 36, 0.294),
+                    blurRadius: 20,
+                    offset: Offset(0, 10)
+                  )] 
+                ),
+                  // elevation: 5,
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(

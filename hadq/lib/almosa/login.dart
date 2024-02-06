@@ -22,7 +22,7 @@ class Login extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(60)),
                   boxShadow:[BoxShadow(
-                    color: Color.fromRGBO(225, 95, 27, .3),
+                    color: Color.fromRGBO(36, 36, 36, 0.294),
                     blurRadius: 20,
                     offset: Offset(0, 10)
                   )] 
