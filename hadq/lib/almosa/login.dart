@@ -36,9 +36,10 @@ class Login extends StatelessWidget {
                       const Text(
                         'Welcome Back!',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 20),
                       TextFormField(
