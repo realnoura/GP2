@@ -8,7 +8,7 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 107, 221, 236),
+      backgroundColor: const Color.fromARGB(255, 107, 221, 236),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -25,22 +25,22 @@ class WelcomePage extends StatelessWidget {
                       child: Column(
                         children: [
                           ListTile(
-                            leading: Icon(Icons.login_rounded),
-                            title: Text('Login'),
+                            leading: const Icon(Icons.login_rounded),
+                            title: const Text('Login'),
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Login()),
+                                MaterialPageRoute(builder: (context) => const Login()),
                               );
                             },
                           ),
                           ListTile(
-                            leading: Icon(Icons.app_registration_rounded),
-                            title: Text('Register'),
+                            leading: const Icon(Icons.app_registration_rounded),
+                            title: const Text('Register'),
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Register()),
+                                MaterialPageRoute(builder: (context) => const Register()),
                               );
                             },
                           ),

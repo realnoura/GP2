@@ -6,9 +6,9 @@ class Menus extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
-      key: _scaffoldKey,
+      key: scaffoldKey,
       backgroundColor: const Color.fromARGB(255, 107, 221, 236),
       appBar:  AppBar(
         automaticallyImplyLeading: false, // Remove the default leading widget
@@ -34,7 +34,7 @@ class Menus extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => WordWander(),));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const WordWander(),));
             },
              child:const Text(
               '1' ,

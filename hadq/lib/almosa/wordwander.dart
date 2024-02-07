@@ -26,7 +26,7 @@ class _WordWanderState extends State<WordWander> {
   }
 
   void _startTimer() {
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         _secondsElapsed++;
       });
@@ -54,11 +54,11 @@ class _WordWanderState extends State<WordWander> {
           ],
         ),
       ),
-      body: Center(
-        child: Container(
+      body: const Center(
+        child: SizedBox(
           width: 400,
           height: 750,
-          child: const Card(
+          child: Card(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
