@@ -30,6 +30,12 @@ class _WordWanderState extends State<WordWander> {
       setState(() {
         _secondsElapsed++;
       });
+
+      // Check if 2 minutes have passed
+      if (_secondsElapsed >= 10) {
+        _timer.cancel(); // Stop the timer
+        _showTimeTaken(); // Show the popup alert
+      }
     });
   }
 
@@ -40,6 +46,28 @@ class _WordWanderState extends State<WordWander> {
     return '$minutes:$seconds';
   }
 
+  void _showTimeTaken() {
+    Duration duration = Duration(seconds: _secondsElapsed);
+    int minutes = duration.inMinutes;
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title:const Text('Time Taken'),
+          content: Text('You took $minutes minutes.'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,23 +76,33 @@ class _WordWanderState extends State<WordWander> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Level 1'),
-            const SizedBox(width: 10),
+            const Text(
+              'Level 1',
+              style: TextStyle(
+                fontSize: 35,
+              ),
+            ),
+            const SizedBox(width: 18),
             Text(_formattedTimer()),
           ],
         ),
       ),
-      body: const Center(
+      body: Center(
         child: SizedBox(
           width: 400,
           height: 750,
-          child: Card(
-            child: Column(
+          child: Container(
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(40)),
+                color: Colors.white70),
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'هذا الكلام اللي توقعته ممكن يصير ',
-                  style: TextStyle(fontSize: 35),
+                  'Hello Buddy',
+                  style: TextStyle(
+                    fontSize: 35,
+                  ),
                   textAlign: TextAlign.center,
                 )
               ],
