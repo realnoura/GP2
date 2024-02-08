@@ -47,176 +47,200 @@ class HomePage extends StatelessWidget {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     return Scaffold(
-        key: scaffoldKey,
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(87, 186, 255, 255),
-          automaticallyImplyLeading: false, // Remove the default leading widget
-          flexibleSpace: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              // Hamburger menu icon
-              IconButton(
-                icon: const Icon(Icons.menu),
-                onPressed: () {
-                  // Open drawer or navigate to menu screen
-                  scaffoldKey.currentState
-                      ?.openDrawer(); // Access Scaffold state using GlobalKey
-                },
+      key: scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(87, 186, 255, 255),
+        automaticallyImplyLeading: false, // Remove the default leading widget
+        flexibleSpace: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // Hamburger menu icon
+            IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                // Open drawer or navigate to menu screen
+                scaffoldKey.currentState
+                    ?.openDrawer(); // Access Scaffold state using GlobalKey
+              },
+            ),
+            // Your flexible space widget (image)
+            Flexible(
+              child: Center(
+                child: Image.asset(
+                  'asset/hadq.png',
+                  fit: BoxFit.fitWidth,
+                  width:
+                      300, // Make the image take the full width of the app bar
+                  alignment: Alignment.center,
+                ),
               ),
-              // Your flexible space widget (image)
-              Flexible(
-                child: Center(
-                  child: Image.asset(
-                    'asset/hadq.png',
-                    fit: BoxFit.fitWidth,
-                    width:
-                        300, // Make the image take the full width of the app bar
-                    alignment: Alignment.center,
+            ),
+            const SizedBox(width: 50), // Adjust as needed for spacing
+          ],
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(162, 64, 193, 210),
+              ),
+              child: Text('Hello Dear'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.account_box),
+              title: const Text('Edit Account'),
+              onTap: () {
+                // Update UI based on item 1 selection
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.leaderboard),
+              title: const Text('Progress'),
+              onTap: () {
+                // Update UI based on item 2 selection
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: const Text('log out'),
+              onTap: () {
+                _showLogoutSentPopup(context);
+                // Update UI based on item 2 selection
+              },
+            ),
+            // Add more list items as needed
+          ],
+        ),
+      ), // Assign a GlobalKey to the Scaffold
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("asset/cloudBackground .png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  // Handle button tap here
+                },
+                child: Container(
+                  width: 300,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    image: const DecorationImage(
+                      image: AssetImage('asset/eye-Trail.png'),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Eye Trail',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
               ),
-              const SizedBox(width: 50), // Adjust as needed for spacing
+              const SizedBox(
+                width: 200,
+                height: 30,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const Instruction()));
+                },
+                child: Container(
+                  width: 300,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    image: const DecorationImage(
+                      image: AssetImage('asset/wordWander.png'),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Word Wander',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 200,
+                height: 30,
+              ),
+              GestureDetector(
+                onTap: () {
+                  //add the page
+                },
+                child: Container(
+                  width: 300,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    image: const DecorationImage(
+                      image: AssetImage('asset/colorCatch.png'),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Color Catch',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(162, 64, 193, 210),
-                ),
-                child: Text('Hello Dear'),
-              ),
-              ListTile(
-                leading: const Icon(Icons.account_box),
-                title: const Text('Edit Account'),
-                onTap: () {
-                  // Update UI based on item 1 selection
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.leaderboard),
-                title: const Text('Progress'),
-                onTap: () {
-                  // Update UI based on item 2 selection
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.logout),
-                title: const Text('log out'),
-                onTap: () {
-                  _showLogoutSentPopup(context);
-                  // Update UI based on item 2 selection
-                },
-              ),
-              // Add more list items as needed
-            ],
-          ),
-        ), // Assign a GlobalKey to the Scaffold
-        body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("asset/cloudBackground .png"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    // Handle button tap here
-                  },
-                  child: Container(
-                    width: 300,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: AssetImage('asset/eye-Trail.png'),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'Eye Trail',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 200,
-                  height: 30,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const Instruction()));
-                  },
-                  child: Container(
-                    width: 300,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: AssetImage('asset/wordWander.png'),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'Word Wander',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 200,
-                  height: 30,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    //add the page
-                  },
-                  child: Container(
-                    width: 300,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: AssetImage('asset/colorCatch.png'),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'Color Catch',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        );
+      ),
+    );
   }
 }
