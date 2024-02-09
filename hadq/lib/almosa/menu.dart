@@ -38,7 +38,7 @@ class Menus extends StatelessWidget{
       body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("asset/cloudBackground .png"),
+              image: AssetImage("asset/menup.jpg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -54,12 +54,20 @@ class Menus extends StatelessWidget{
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: AssetImage('asset/wordWander.png'),
-                        fit: BoxFit.cover,
-                        opacity: 0.9
-                      ),
+                      // image: const DecorationImage(
+                      //   image: AssetImage('asset/wordWander.png'),
+                      //   fit: BoxFit.cover,
+                      //   opacity: 0.9
+                      // ),
+                      color: const Color.fromARGB(255, 255, 226, 188),
                       borderRadius: BorderRadius.circular(60),
+                      boxShadow:const [
+                        BoxShadow(
+                          blurRadius:5 ,
+                          offset: Offset(2, 1)
+                          )
+                          ]
+                      // borderRadius: BorderRadius.circular(60),
                     ),
                     child: const Center(
                       child: Text(
@@ -86,12 +94,19 @@ class Menus extends StatelessWidget{
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: AssetImage('asset/wordWander.png'),
-                        fit: BoxFit.cover,
-                        opacity: 0.9
-                      ),
+                      // image: const DecorationImage(
+                      //   image: AssetImage('asset/wordWander.png'),
+                      //   fit: BoxFit.cover,
+                      //   opacity: 0.9
+                      // ),
+                      color: const Color.fromARGB(255, 255, 226, 188),
                       borderRadius: BorderRadius.circular(60),
+                      boxShadow:const [
+                        BoxShadow(
+                          blurRadius:5 ,
+                          offset: Offset(2, 1)
+                          )
+                          ]
                     ),
                     child: const Center(
                       child: Text(
@@ -117,12 +132,20 @@ class Menus extends StatelessWidget{
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: AssetImage('asset/wordWander.png'),
-                        fit: BoxFit.cover,
-                        opacity: .9
-                      ),
+                      // image: const DecorationImage(
+                      //   image: AssetImage('asset/wordWander.png'),
+                      //   fit: BoxFit.cover,
+                      //   opacity: .9
+                      // ),
+                      color: const Color.fromARGB(255, 255, 226, 188),
                       borderRadius: BorderRadius.circular(60),
+                      boxShadow:const [
+                        BoxShadow(
+                          blurRadius:5 ,
+                          offset: Offset(2, 1)
+                          )
+                          ]
+                      // borderRadius: BorderRadius.circular(60),
                     ),
                     child: const Center(
                       child: Text(
