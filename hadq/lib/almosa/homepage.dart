@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hadq/almosa/instcr.dart';
+import 'package:hadq/almosa/progress_page.dart';
 import 'package:hadq/almosa/welcome.dart';
 
 class HomePage extends StatelessWidget {
@@ -23,6 +24,9 @@ class HomePage extends StatelessWidget {
                     );
                   },
                   child: const Text('Cancel'),
+                ),
+                const SizedBox(
+                  width: 40,
                 ),
                 TextButton(
                   onPressed: () {
@@ -100,7 +104,10 @@ class HomePage extends StatelessWidget {
               leading: const Icon(Icons.leaderboard),
               title: const Text('Progress'),
               onTap: () {
-                // Update UI based on item 2 selection
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProgressPage()));
               },
             ),
             ListTile(
