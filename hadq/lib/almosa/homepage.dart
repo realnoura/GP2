@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hadq/almosa/instcr.dart';
 import 'package:hadq/almosa/progress_page.dart';
 import 'package:hadq/almosa/welcome.dart';
+import 'package:hadq/almosa/welcome.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -212,6 +214,7 @@ class HomePage extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => gameHome(),));
                   //add the page
                 },
                 child: Container(
