@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:google_fonts/google_fonts.dart';
 import 'package:hadq/game/ColorCatch.dart';
+import 'package:hadq/almosa/HomePage.dart';
 
 
 class gameHome extends StatefulWidget {
@@ -43,6 +44,7 @@ class _gameHome extends State<gameHome> {
           color: const Color.fromARGB(255, 5, 47, 82),
           onPressed: () {
             //يروح للهوم بيج
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage(),));
             print('Icon button pressed!');
           },
         ),

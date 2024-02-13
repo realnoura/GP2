@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:hadq/almosa/HomePage.dart';
 
 class ColorCatch extends StatefulWidget  {
   @override
@@ -110,6 +111,8 @@ class _ColorCatch extends State<ColorCatch> {
                                   color: Color.fromRGBO(5, 47, 82, 1),
                                   onPressed: () {
                                     //يروح للهوم بيج
+                                    _pauseTimer();
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage(),));
                                     print('Icon button pressed!');
                                   },
                                 ),                 
@@ -200,6 +203,8 @@ class _ColorCatch extends State<ColorCatch> {
                     
                     ElevatedButton(
                   onPressed: () => {
+                    
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage(),))
                     //يروح للهوم بيج
                   },
                   
@@ -242,7 +247,7 @@ class _ColorCatch extends State<ColorCatch> {
                 ),
                 child: Text('Pouse\ngame'),
                 onPressed: () {
-                   _pauseTimer();
+                   _pauseTimer();//اسوي ميثود توقف الوقت
         // Handle button press
                  showDialog(
               context: context,
@@ -271,6 +276,8 @@ class _ColorCatch extends State<ColorCatch> {
                   ElevatedButton(
     onPressed: () => {
       //يروح للهوم بيج
+      _pauseTimer(),
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage(),))
     },
     
     style: ElevatedButton.styleFrom(

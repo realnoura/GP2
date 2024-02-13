@@ -4,7 +4,7 @@ import 'package:hadq/almosa/HomePage.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: WelcomePage(),
-    //home: HomePage(),
+    //home: WelcomePage(),
+    home: HomePage(),
   ));
 }
