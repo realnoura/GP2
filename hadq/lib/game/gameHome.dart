@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:game1/ColorCatch.dart';
+//import 'package:google_fonts/google_fonts.dart';
+import 'package:hadq/game/ColorCatch.dart';
 
 
 class gameHome extends StatefulWidget {
@@ -14,7 +14,7 @@ class gameHome extends StatefulWidget {
 }
 
 
-class _BaseLayout extends State<BaseLayout> {
+class _gameHome extends State<gameHome> {
 
   @override
   Widget build(BuildContext context){  
@@ -28,7 +28,7 @@ class _BaseLayout extends State<BaseLayout> {
             Container(
       decoration:const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/imgs/game1.png'),
+          image: AssetImage('asset/game1.png'),
           fit: BoxFit.cover,
         ),
       ),

@@ -66,8 +66,8 @@ flutter:
     - asset/wordWander.png
     - asset/colorCatch.png
     - asset/menup.jpg
-    - asset/game1.jpg
-    - asset/game2.jpg
+    - asset/game1.png
+    - asset/game2.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

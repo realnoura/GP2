@@ -73,8 +73,8 @@ class _ColorCatch extends State<ColorCatch> {
             Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          //image: AssetImage('assets/imgs/b2.png'),
-          image: AssetImage('assets/imgs/game2.png'),
+          
+          image: AssetImage('asset/game2.png'),
           fit: BoxFit.cover,
         ),
       ),

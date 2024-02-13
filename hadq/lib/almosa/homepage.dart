@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hadq/almosa/instcr.dart';
 import 'package:hadq/almosa/progress_page.dart';
 import 'package:hadq/almosa/welcome.dart';
-import 'package:hadq/almosa/welcome.dart';
+import 'package:hadq/game/gameHome.dart';
 
 
 class HomePage extends StatelessWidget {
